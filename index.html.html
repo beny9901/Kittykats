@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Security Check</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    background: black;
+    color: red;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+  }
+</style>
+</head>
+<body onclick="startPrank()">
+  <div>System Warning! Tap to verify security!</div>
+
+  <audio id="alarm" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" loop></audio>
+
+<script>
+function startPrank() {
+    var audio = document.getElementById('alarm');
+    audio.volume = 1.0;
+    audio.play();
+    document.body.innerHTML = "<h1>!!! SYSTEM VIRUS DETECTED !!!</h1><p>Restart in progress...</p>";
+
+    setTimeout(function() {
+        document.body.innerHTML = "<h1 style='font-size:80px;'>RESTARTING...</h1>";
+    }, 5000);
+}
+</script>
+</body>
+</html>
